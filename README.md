@@ -14,7 +14,7 @@ A Python-based Twitter bot that scans user timelines for keywords and generates 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/ImStillBlessed/twitter_chatbot.git
+    git clone https://github.com/ImStillBlessed/twitter-chatbot.git
     cd twitter-chatbot
     ```
 
