@@ -51,6 +51,34 @@ A Python-based Twitter bot that scans user timelines for keywords and generates 
 
 ## Configuration
 
+### API Keys Setup Guide
+
+#### Step 1: Twitter API Keys
+
+1. Visit Twitter Developer Portal
+2. Create a new project and app
+3. Select Elevated access (required for v2 endpoints)
+4. Navigate to Keys and Tokens
+5. Generate:
+    - API Key and Secret
+    - Access Token and Secret
+    - Bearer Token
+
+#### Step 2: Groq API Key
+
+1. Visit Groq Console
+2. Create account/Sign in
+3. Navigate to API Keys section
+4. Generate new API key
+
+#### Step 3: Configure Environment
+
+#### Step 4: Verify Credentials
+
+```bash
+python test_credentials.py
+```
+
 ### Available Options
 
 0. Set Twitter username to monitor
