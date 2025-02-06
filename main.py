@@ -6,19 +6,19 @@ def configure_bot():
     
     while True:
         print("\n=== Twitter Bot Configuration ===")
-        print("0. Set Twitter username")
+        # print("0. Set Twitter username")
         print("1. Set keywords")
         print("2. Set custom prompt")
         print("3. View current settings")
         print("4. Start bot")
         print("5. Exit")
         
-        choice = input("Choose an option (0-5): ")
+        choice = input("Choose an option (1-5): ")
         
-        if choice == "0":
-            username = input("Enter Twitter username: ")
-            config.set_username(username)
-            print(f"Username set: {username}")
+        # if choice == "0":
+        #     username = input("Enter Twitter username: ")
+        #     config.set_username(username)
+        #     print(f"Username set: {username}")
         
         if choice == "1":
             keywords = input("Enter keywords (comma-separated): ").split(",")
@@ -54,17 +54,17 @@ def configure_bot():
             print(f"\nCurrent Settings:")
             print(f"Keywords: {config.keywords}")
             print(f"Prompt: {config.get_system_prompt()}")
-            print(f"Username: {config.username}")
+            # print(f"Username: {config.username}")
             
         elif choice == "4":
-            if not config.username:
-                print("Error: Please set a Twitter username.")
-                continue
+            # if not config.username:
+            #     print("Error: Please set a Twitter username.")
+            #     continue
             if not config.keywords:
                 print("Error: Please set keywords to scan for.")
                 continue
             print("\nStarting bot...")
-            scan_timeline(config.username, config.keywords)
+            scan_timeline(config.keywords)
             
         elif choice == "5":
             break

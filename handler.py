@@ -1,6 +1,6 @@
 import os
-import tweepy
 from dotenv import load_dotenv
+import tweepy
 from bot import bot_config
 from groqsdk import generate_ai_response, generate_default_response
 
@@ -18,21 +18,20 @@ client = tweepy.Client(
 # Function to post to Twitter
 def post_to_twitter(response_text):
     try:
-        tweet = client.create_tweet(text=response_text)
+        tweet = client.create_tweet(text=response_text, user_auth=True)
         print("Tweet posted successfully!")
     except tweepy.TweepyException as e:
         print(f"Error posting tweet: {e}")
 
 # Scan user timeline for keywords and respond
-def scan_timeline(username, keywords):
-    """Scan timeline with configurable username and keywords"""
-    username = username or bot_config.username
+def scan_timeline(keywords):
+    """Scan timeline with configurable keywords"""
     keywords = keywords or bot_config.keywords
     
     try:
-        user = client.get_user(username=username, user_auth=True)
-        user_id = user.data.id
-        tweets = client.get_users_tweets(id=user_id, max_results=10)
+        user = client.get_me(user_auth=True)
+        # user_id = user.data.id
+        tweets = client.get_home_timeline(max_results=10)
 
         if tweets.data:
             for tweet in tweets.data:

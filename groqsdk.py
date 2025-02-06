@@ -26,4 +26,7 @@ def generate_ai_response(tweet_text):
         return "I'm unable to generate a response at the moment."
 
 def generate_default_response():
-    return "Thank you for reaching out! How can I assist you today?"
+    keywords_str = ", ".join(bot_config.keywords.copy())
+    
+    default_prompt = f"generate a tweet from these keywords: {keywords_str}"
+    return generate_ai_response(default_prompt)

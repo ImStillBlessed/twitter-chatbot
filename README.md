@@ -191,3 +191,8 @@ MIT License - See LICENSE file
 
 - [GitHub Issues](https://github.com/ImsBlessed/twitter-chatbot/issues)
 - Email: <eprince1800@gmail.com>
+
+## Todo
+
+- [x] make it the personal user timeline
+- [ ] post reply to the user where the keyword is found.
